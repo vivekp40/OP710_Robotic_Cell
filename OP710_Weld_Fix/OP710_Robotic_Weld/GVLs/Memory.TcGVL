@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <GVL Name="Memory" Id="{956ae354-959e-415d-9b27-1a95611d5a3f}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	
+Start_Pb     		: BOOL;						    // Station Cycle Start Pb
+Station_Mode 		: INT;							// Station Manual/Auto Pb
+Fix_Sel   	 		: INT;							//Station Select Pb, 0 - OP710 Long, 1 - OP710 Short
+Auto_Mode	 		: BOOL;
+Manual_Mode	 		: BOOL;
+Master_On	 		: BOOL;
+Safety_Ok	 		: BOOL;
+Fix1_Part_1_Load  	: BOOL;
+Fix1_Part_2_Load  	: BOOL;
+Fix2_Part_1_Load  	: BOOL;
+Fix2_Part_2_Load  	: BOOL;
+Return_Home  		: BOOL;
+
+i_B : ARRAY [0..28] OF BOOL;						// Part Sensor Load
+
+END_VAR							
+]]></Declaration>
+  </GVL>
+</TcPlcObject>

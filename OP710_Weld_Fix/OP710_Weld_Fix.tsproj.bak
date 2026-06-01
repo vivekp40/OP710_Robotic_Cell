@@ -1,0 +1,500 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.74">
+	<Project ProjectGUID="{C0FEB859-24B6-479C-9696-C8E317145F83}" TargetNetId="192.168.4.1.1.1" Target64Bit="true" ShowHideConfigurations="#x6">
+		<System>
+			<Tasks>
+				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+					<Name>PlcTask</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project GUID="{116F33E1-59B8-494E-B64F-33CA9170714E}" Name="OP710_Robotic_Weld" PrjFilePath="OP710_Robotic_Weld\OP710_Robotic_Weld.plcproj" TmcFilePath="OP710_Robotic_Weld\OP710_Robotic_Weld.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{4212B2D4-8E3F-A937-577C-E04E822ADF9F}">
+					<Name>OP710_Robotic_Weld Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>Inputs.i_Control_Pressure_Sw_In1_BPB1</Name>
+							<Comment><![CDATA[Control Pressure Switch Input 1-BPB1  ]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_Control_Pressure_Sw_In2_BPB1</Name>
+							<Comment><![CDATA[Control Pressure Switch Input 2-BPB1  ]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_Valve_Pos_BGB1</Name>
+							<Comment><![CDATA[Valve Position-BGB1]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC6_Clamp_1_Sensor_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 6 Clamping Unit 1 sensor  HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC6_Clamp_1_Sensor_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 6 Clamping Unit 1 sensor  WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC4_Clamp_3_Sensor_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 4 Clamping Unit 3 sensor  HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC4_Clamp_3_Sensor_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 4 Clamping Unit 3 sensor  WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B13</Name>
+							<Comment><![CDATA[PART CONTROL  B13]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B27</Name>
+							<Comment><![CDATA[PART CONTROL  B27]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B14</Name>
+							<Comment><![CDATA[PART CONTROL  B14]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B28</Name>
+							<Comment><![CDATA[PART CONTROL  B28]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_KEC6_Slave_module_1_2_1</Name>
+							<Comment><![CDATA[Connect to KEC6 Salve module 1.2]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_KEC6_Slave_module_1_2_2</Name>
+							<Comment><![CDATA[Connect to KEC6 Salve module 1.2]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC4_Clamp_2_Sensor_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 4 Clamping Unit 2 sensor HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC4_Clamp_2_Sensor_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 4 Clamping Unit 2 sensor WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC4_Clamp_1_Sensor_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 4 Clamping Unit 1 sensor HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC4_Clamp_1_Sensor_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 4 Clamping Unit 1 sensor WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC2_Clamp_3_Sensor_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 2 Clamping Unit 3 sensor HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC2_Clamp_3_Sensor_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 2 Clamping Unit 3 sensor WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B12</Name>
+							<Comment><![CDATA[PART CONTROL B12]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B26</Name>
+							<Comment><![CDATA[PART CONTROL B26]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B11</Name>
+							<Comment><![CDATA[PART CONTROL B11]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B25</Name>
+							<Comment><![CDATA[PART CONTROL B25]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B10</Name>
+							<Comment><![CDATA[PART CONTROL B10]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B24</Name>
+							<Comment><![CDATA[PART CONTROL B24]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC3_Clamp_3_Sensor_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 3 Clamping Unit 3 sensor HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC3_Clamp_3_Sensor_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 3 Clamping Unit 3 sensor WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC3_Clamp_2_Sensor_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 3 Clamping Unit 2 sensor HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC3_Clamp_2_Sensor_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 3 Clamping Unit 2 sensor WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC3_Clamp_1_Sensor_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 3 Clamping Unit 1 sensor HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC3_Clamp_1_Sensor_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 3 Clamping Unit 1 sensor WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B7</Name>
+							<Comment><![CDATA[PART CONTROL B7]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B21</Name>
+							<Comment><![CDATA[PART CONTROL B21]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B6</Name>
+							<Comment><![CDATA[PART CONTROL B6]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B20</Name>
+							<Comment><![CDATA[PART CONTROL B20]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B5</Name>
+							<Comment><![CDATA[PART CONTROL B5]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B19</Name>
+							<Comment><![CDATA[PART CONTROL B19]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_KEC8_Slave_module_2_2_1</Name>
+							<Comment><![CDATA[Connect to KEC8 Salve module 2.2]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_KEC8_Slave_module_2_2_2</Name>
+							<Comment><![CDATA[Connect to KEC8 Salve module 2.2]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC1_Clamp_3_Sensor_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 1 Clamping Unit 3 sensor HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC1_Clamp_3_Sensor_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 1 Clamping Unit 3 sensor WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC1_Clamp_2_Sensor_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 1 Clamping Unit 2 sensor HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC1_Clamp_2_Sensor_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 1 Clamping Unit 2 sensor WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC1_Clamp_1_Sensor_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 1 Clamping Unit 1 sensor HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC1_Clamp_1_Sensor_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 1 Clamping Unit 1 sensor WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B4</Name>
+							<Comment><![CDATA[PART CONTROL B4]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B18</Name>
+							<Comment><![CDATA[PART CONTROL B18]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B3</Name>
+							<Comment><![CDATA[PART CONTROL B3]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B17</Name>
+							<Comment><![CDATA[PART CONTROL B17]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B2</Name>
+							<Comment><![CDATA[PART CONTROL B2]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B16</Name>
+							<Comment><![CDATA[PART CONTROL B16]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC2_Clamp_2_Sensor_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 2 Clamping Unit 2 sensor HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC2_Clamp_2_Sensor_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 2 Clamping Unit 2 sensor WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC2_Clamp_1_Sensor_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 2 Clamping Unit 1 sensor HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC2_Clamp_1_Sensor_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 2 Clamping Unit 1 sensor WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B9</Name>
+							<Comment><![CDATA[PART CONTROL B9]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B23</Name>
+							<Comment><![CDATA[PART CONTROL B23]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B8</Name>
+							<Comment><![CDATA[PART CONTROL B8]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B22</Name>
+							<Comment><![CDATA[PART CONTROL B22]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC5_Clamp_1_Sensor_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 5 Clamping Unit 1 sensor HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_CC5_Clamp_1_Sensor_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 5 Clamping Unit 1 sensor WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B1</Name>
+							<Comment><![CDATA[PART CONTROL B1]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_PART_CONTROL_B15</Name>
+							<Comment><![CDATA[PART CONTROL B15]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_TR_0_Deg</Name>
+							<Comment><![CDATA[Trunnion at 0 degree]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_TR_20_Degree</Name>
+							<Comment><![CDATA[Trunnion at -20 degree]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_TR_45_Degree</Name>
+							<Comment><![CDATA[Trunnion at 45 degree]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_TR_50_Degree</Name>
+							<Comment><![CDATA[Trunnion at 50 degree]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_TR_80_Degree</Name>
+							<Comment><![CDATA[Trunnion at 80 degree]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_TT_0_Degree</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.i_TT_180_Degree</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.Roller_Door_Up</Name>
+							<Comment><![CDATA[Roller Door Up]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Inputs.Roller_Door_Down</Name>
+							<Comment><![CDATA[Roller Door Down]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2" AreaNo="1">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>Outputs.o_CC1_CLAMPING_UNIT1_3_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 1 Clamping Unit 1-3 WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.o_CC1_CLAMPING_UNIT1_3_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 1 Clamping Unit 1-3 HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.o_CC2_CLAMPING_UNIT1_3_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 2 Clamping Unit 1-3 WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.o_CC2_CLAMPING_UNIT1_3_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 2 Clamping Unit 1-3 HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.o_CC3_CLAMPING_UNIT1_3_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 3 Clamping Unit 1-3 WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.o_CC3_CLAMPING_UNIT1_3_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 3 Clamping Unit 1-3 HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.o_CC4_CLAMPING_UNIT1_3_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 4 Clamping Unit 1-3 WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.o_CC4_CLAMPING_UNIT1_3_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 4 Clamping Unit 1-3 HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.o_CC5_CLAMPING_UNIT1_3_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 5 Clamping Unit 1 WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.o_CC5_CLAMPING_UNIT1_3_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 5 Clamping Unit 1 HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.o_CC6_CLAMPING_UNIT1_3_WP</Name>
+							<Comment><![CDATA[Clamping Circuit 6 Clamping Unit 1 WP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.o_CC6_CLAMPING_UNIT1_3_HP</Name>
+							<Comment><![CDATA[Clamping Circuit 6 Clamping Unit 1 HP]]></Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.i_TR_0_Deg_Cmd</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.i_TR_20_Deg_Cmd</Name>
+							<Comment><![CDATA[Trunnion at -20 degree]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.i_TR_45_Deg_Cmd</Name>
+							<Comment><![CDATA[Trunnion at 45 degree]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.i_TR_50_Deg_Cmd</Name>
+							<Comment><![CDATA[Trunnion at 50 degree]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.i_TR_80_Deg_Cmd</Name>
+							<Comment><![CDATA[Trunnion at 80 degree]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.i_TT_0_Deg_Cmd</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.i_TT_180_Deg_Cmd</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.Roller_Door_Up_Cmd</Name>
+							<Comment><![CDATA[Roller Door Up]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Outputs.Roller_Door_Down_Cmd</Name>
+							<Comment><![CDATA[Roller Door Down]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010030</OTCID>
+							</ManualConfig>
+							<Priority>20</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+		</Plc>
+	</Project>
+</TcSmProject>

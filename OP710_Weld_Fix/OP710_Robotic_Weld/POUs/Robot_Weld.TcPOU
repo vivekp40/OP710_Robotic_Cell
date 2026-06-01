@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="Robot_Weld" Id="{a7105986-11fb-407c-b397-ca5ac0e537ce}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Robot_Weld
+
+VAR_INPUT
+	Robot_1_In			:	Weld_Robot;
+	Part_Unload_Comp	:	BOOL;
+END_VAR
+
+VAR_OUTPUT
+	Robot_1_Out			:	Weld_Robot;	
+END_VAR
+
+VAR
+	Weld_Delay			:	TON;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE Robot_1_In.i_Prg_No OF
+	101:
+		IF (Robot_1_In.i_Area_Ok AND Robot_1_In.i_Start) THEN
+		Robot_1_In.i_Home := FALSE;
+		Weld_Delay(IN:= Robot_1_In.i_Start, PT:= T#1S, Q=> , ET=> );
+		IF Weld_Delay.Q THEN
+		Robot_1_Out.o_Weld_Comp := TRUE;
+		Robot_1_In.i_Home := TRUE;
+		END_IF
+		END_IF
+		IF (Robot_1_In.i_Home AND Part_Unload_Comp) THEN
+		Robot_1_Out.o_Weld_Comp := FALSE;	
+		END_IF
+		Robot_1_In.i_Prg_No := 101;
+	102:
+		IF (Robot_1_In.i_Area_Ok AND Robot_1_In.i_Start) THEN
+		Robot_1_In.i_Home := FALSE;
+		Weld_Delay(IN:= Robot_1_In.i_Start, PT:= T#1S, Q=> , ET=> );
+		IF Weld_Delay.Q THEN
+		Robot_1_Out.o_Weld_Comp := TRUE;
+		Robot_1_In.i_Home := TRUE;
+		END_IF
+		END_IF
+		IF (Robot_1_In.i_Home AND Part_Unload_Comp) THEN
+		Robot_1_Out.o_Weld_Comp := FALSE;	
+		END_IF
+		Robot_1_In.i_Prg_No := 102;
+END_CASE
+]]></ST>
+    </Implementation>
+    <LineIds Name="Robot_Weld">
+      <LineId Id="22" Count="1" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="39" Count="1" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="94" Count="0" />
+      <LineId Id="82" Count="11" />
+      <LineId Id="95" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

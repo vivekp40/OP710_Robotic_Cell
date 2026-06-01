@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="Fix2_FB" Id="{0c14c351-3f02-4de5-89dd-d778c7939cd5}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Fix2_FB
+VAR_INPUT
+CC1_Input 			: Fixture;					//Clamping Circuit-1
+CC2_Input 			: Fixture;					//Clamping Circuit-2
+CC3_Input 			: Fixture;					//Clamping Circuit-3
+CC4_Input 			: Fixture;					//Clamping Circuit-4
+CC5_Input 			: Fixture;					//Clamping Circuit-5
+CC6_Input 			: Fixture;					//Clamping Circuit-6
+
+Unit_Adv_Pb 		: BOOL;						//Fixture Cylinder Clamp Pb
+Unit_Ret_Pb 		: BOOL;						//Fixture Cylinder Declamp Pb
+
+Part1_Load_Comp 	: BOOL;						//OP710 Part-1 Load Complete
+Part1_Unload_Comp 	: BOOL;						//OP710 Part-1 Unload Complete
+Part2_Load_Comp 	: BOOL;						//OP710 Part-2 Load Complete
+Part2_Unload_Comp 	: BOOL;						//OP710 Part-2 Unload Complete
+
+Robot_Weld_Comp 	: BOOL;						//Robot Weld Complete
+TR_0_Deg  			: BOOL;						//Trunnion at 0 degree
+TR_20_Deg 			: BOOL;						//Trunnion at -20 degree
+TR_50_Deg 			: BOOL;						//Trunnion at 50 degree
+
+TT_180_Deg 			: BOOL;						//TurnTable at 180 degree
+TT_0_Deg 			: BOOL;						//TurnTable at 0 degree
+Roller_Down 		: BOOL;						//Roller Door Down position
+Roller_Up 			: BOOL;						//Roller Door Up position
+END_VAR
+
+VAR_OUTPUT
+CC1_Output 			: Fixture;							//Clamping Circuit-1
+CC2_Output 			: Fixture;							//Clamping Circuit-2
+CC3_Output 			: Fixture;							//Clamping Circuit-3
+CC4_Output 			: Fixture;							//Clamping Circuit-4
+CC5_Output 			: Fixture;							//Clamping Circuit-5
+CC6_Output 			: Fixture;							//Clamping Circuit-6
+Fix_Home_Position 	: BOOL;
+Fix_Work_Position 	: BOOL;
+
+END_VAR
+
+VAR
+Cyl_Delay 			: ARRAY [0..30] OF TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Fix_Home_Position := CC1_Output.Home_Position AND CC2_Output.Home_Position AND CC3_Output.Home_Position AND CC4_Output.Home_Position AND CC5_Output.Home_Position AND CC6_Output.Home_Position;
+Fix_Work_Position := CC1_Output.Work_Position AND CC2_Output.Work_Position AND CC3_Output.Work_Position AND CC4_Output.Work_Position AND CC5_Output.Work_Position AND CC6_Output.Work_Position;
+
+CASE Station_Mode OF
+	
+	0: 
+	
+	IF (CC5_Input.Manual_Sel AND Unit_Adv_Pb AND (NOT Unit_Ret_Pb) AND CC6_Output.Home_Position) THEN
+		CC5_Output.o_Clamp_WP := TRUE;
+		Cyl_Delay[0](IN:= CC5_Output.o_Clamp_WP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[0].Q THEN
+		CC5_Input.i_Clamp1_Fbk := CC5_Input.i_Clamp2_Fbk := CC5_Input.i_Clamp3_Fbk := CC5_Output.Work_Position := TRUE;
+		CC5_Input.i_Declamp1_Fbk := CC5_Input.i_Declamp2_Fbk := CC5_Input.i_Declamp3_Fbk := CC5_Output.Home_Position := FALSE;
+		CC5_Output.o_Clamp_WP := FALSE;
+		END_IF
+	ELSIF (CC5_Input.Manual_Sel AND Unit_Ret_Pb AND (NOT Unit_Adv_Pb) AND CC6_Output.Home_Position) THEN
+		CC5_Output.o_Clamp_HP := TRUE;
+		Cyl_Delay[1](IN:= CC5_Output.o_Clamp_HP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[1].Q THEN
+		CC5_Input.i_Declamp1_Fbk := CC5_Input.i_Declamp2_Fbk := CC5_Input.i_Declamp3_Fbk := CC5_Output.Home_Position := TRUE;
+		CC5_Input.i_Clamp1_Fbk := CC5_Input.i_Clamp2_Fbk := CC5_Input.i_Clamp3_Fbk := CC5_Output.Work_Position := FALSE;
+		CC5_Output.o_Clamp_HP := FALSE;
+		END_IF
+	END_IF
+	
+	IF (CC6_Input.Manual_Sel AND Unit_Adv_Pb AND (NOT Unit_Ret_Pb) AND CC5_Output.Work_Position) THEN
+		CC6_Output.o_Clamp_WP := TRUE;
+		Cyl_Delay[2](IN:= CC6_Output.o_Clamp_WP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[2].Q THEN
+		CC6_Input.i_Clamp1_Fbk := CC6_Input.i_Clamp2_Fbk := CC6_Input.i_Clamp3_Fbk := CC6_Output.Work_Position := TRUE;
+		CC6_Input.i_Declamp1_Fbk := CC6_Input.i_Declamp2_Fbk := CC6_Input.i_Declamp3_Fbk := CC6_Output.Home_Position := FALSE;
+		CC6_Output.o_Clamp_WP := FALSE;
+		END_IF
+	ELSIF (CC6_Input.Manual_Sel AND Unit_Ret_Pb AND (NOT Unit_Adv_Pb) AND CC5_Output.Work_Position) THEN
+		CC6_Output.o_Clamp_HP := TRUE;
+		Cyl_Delay[3](IN:= CC6_Output.o_Clamp_HP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[3].Q THEN
+		CC6_Input.i_Declamp1_Fbk := CC6_Input.i_Declamp2_Fbk := CC6_Input.i_Declamp3_Fbk := CC6_Output.Home_Position := TRUE;
+		CC6_Input.i_Clamp1_Fbk := CC6_Input.i_Clamp2_Fbk := CC6_Input.i_Clamp3_Fbk := CC6_Output.Work_Position := FALSE;
+		CC6_Output.o_Clamp_HP := FALSE;
+		END_IF
+	END_IF
+	
+	IF (CC1_Input.Manual_Sel AND Unit_Adv_Pb AND (NOT Unit_Ret_Pb) AND CC6_Output.Work_Position) THEN
+		CC1_Output.o_Clamp_WP := TRUE;
+		Cyl_Delay[4](IN:= CC1_Output.o_Clamp_WP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[4].Q THEN
+		CC1_Input.i_Clamp1_Fbk := CC1_Input.i_Clamp2_Fbk := CC1_Input.i_Clamp3_Fbk := CC1_Output.Work_Position := TRUE;
+		CC1_Input.i_Declamp1_Fbk := CC1_Input.i_Declamp2_Fbk := CC1_Input.i_Declamp3_Fbk := CC1_Output.Home_Position := FALSE;
+		CC1_Output.o_Clamp_WP := FALSE;
+		END_IF
+	ELSIF (CC1_Input.Manual_Sel AND Unit_Ret_Pb AND (NOT Unit_Adv_Pb) AND CC6_Output.Work_Position) THEN
+		CC1_Output.o_Clamp_HP := TRUE;
+		Cyl_Delay[5](IN:= CC1_Output.o_Clamp_HP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[5].Q THEN
+		CC1_Input.i_Declamp1_Fbk := CC1_Input.i_Declamp2_Fbk := CC1_Input.i_Declamp3_Fbk := CC1_Output.Home_Position := TRUE;
+		CC1_Input.i_Clamp1_Fbk := CC1_Input.i_Clamp2_Fbk := CC1_Input.i_Clamp3_Fbk := CC1_Output.Work_Position := FALSE;
+		CC1_Output.o_Clamp_HP := FALSE;
+		END_IF
+	END_IF
+	
+	IF (CC3_Input.Manual_Sel AND Unit_Adv_Pb AND (NOT Unit_Ret_Pb) AND CC1_Output.Work_Position) THEN
+		CC3_Output.o_Clamp_WP := TRUE;
+		Cyl_Delay[6](IN:= CC2_Output.o_Clamp_WP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[6].Q THEN
+		CC3_Input.i_Clamp1_Fbk := CC3_Input.i_Clamp2_Fbk := CC3_Input.i_Clamp3_Fbk := CC3_Output.Work_Position := TRUE;
+		CC3_Input.i_Declamp1_Fbk := CC3_Input.i_Declamp2_Fbk := CC3_Input.i_Declamp3_Fbk := CC3_Output.Home_Position := FALSE;
+		CC3_Output.o_Clamp_WP := FALSE;
+		END_IF
+	ELSIF (CC3_Input.Manual_Sel AND Unit_Ret_Pb AND (NOT Unit_Adv_Pb) AND CC1_Output.Work_Position) THEN
+		CC3_Output.o_Clamp_HP := TRUE;
+		Cyl_Delay[7](IN:= CC3_Output.o_Clamp_HP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[7].Q THEN
+		CC3_Input.i_Declamp1_Fbk := CC3_Input.i_Declamp2_Fbk := CC3_Input.i_Declamp3_Fbk := CC3_Output.Home_Position := TRUE;
+		CC3_Input.i_Clamp1_Fbk := CC3_Input.i_Clamp2_Fbk := CC3_Input.i_Clamp3_Fbk := CC3_Output.Work_Position := FALSE;
+		CC3_Output.o_Clamp_HP := FALSE;
+		END_IF
+	END_IF
+	
+	IF (CC2_Input.Manual_Sel AND Unit_Adv_Pb AND (NOT Unit_Ret_Pb) AND CC3_Output.Work_Position) THEN
+		CC2_Output.o_Clamp_WP := TRUE;
+		Cyl_Delay[8](IN:= CC2_Output.o_Clamp_WP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[8].Q THEN
+		CC2_Input.i_Clamp1_Fbk := CC2_Input.i_Clamp2_Fbk := CC2_Input.i_Clamp3_Fbk := CC2_Output.Work_Position := TRUE;
+		CC2_Input.i_Declamp1_Fbk := CC2_Input.i_Declamp2_Fbk := CC2_Input.i_Declamp3_Fbk := CC2_Output.Home_Position := FALSE;
+		CC2_Output.o_Clamp_WP := FALSE;
+		END_IF
+	ELSIF (CC2_Input.Manual_Sel AND Unit_Ret_Pb AND (NOT Unit_Adv_Pb) AND CC3_Output.Work_Position) THEN
+		CC2_Output.o_Clamp_HP := TRUE;
+		Cyl_Delay[9](IN:= CC2_Output.o_Clamp_HP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[9].Q THEN
+		CC2_Input.i_Declamp1_Fbk := CC2_Input.i_Declamp2_Fbk := CC2_Input.i_Declamp3_Fbk := CC2_Output.Home_Position := TRUE;
+		CC2_Input.i_Clamp1_Fbk := CC2_Input.i_Clamp2_Fbk := CC2_Input.i_Clamp3_Fbk := CC2_Output.Work_Position := FALSE;
+		CC2_Output.o_Clamp_HP := FALSE;
+		END_IF
+	END_IF
+	
+	IF (CC4_Input.Manual_Sel AND Unit_Adv_Pb AND (NOT Unit_Ret_Pb) AND CC2_Output.Work_Position) THEN
+		CC4_Output.o_Clamp_WP := TRUE;
+		Cyl_Delay[10](IN:= CC4_Output.o_Clamp_WP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[10].Q THEN
+		CC4_Input.i_Clamp1_Fbk := CC4_Input.i_Clamp2_Fbk := CC4_Input.i_Clamp3_Fbk := CC4_Output.Work_Position := TRUE;
+		CC4_Input.i_Declamp1_Fbk := CC4_Input.i_Declamp2_Fbk := CC4_Input.i_Declamp3_Fbk := CC4_Output.Home_Position := FALSE;
+		CC4_Output.o_Clamp_WP := FALSE;
+		END_IF
+	ELSIF (CC4_Input.Manual_Sel AND Unit_Ret_Pb AND (NOT Unit_Adv_Pb) AND CC2_Output.Work_Position) THEN
+		CC4_Output.o_Clamp_HP := TRUE;
+		Cyl_Delay[11](IN:= CC4_Output.o_Clamp_HP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[11].Q THEN
+		CC4_Input.i_Declamp1_Fbk := CC4_Input.i_Declamp2_Fbk := CC4_Input.i_Declamp3_Fbk := CC4_Output.Home_Position := TRUE;
+		CC4_Input.i_Clamp1_Fbk := CC4_Input.i_Clamp2_Fbk := CC4_Input.i_Clamp3_Fbk := CC4_Output.Work_Position := FALSE;
+		CC4_Output.o_Clamp_HP := FALSE;
+		END_IF
+	END_IF
+
+	
+	1:
+
+	IF (Start_Pb AND CC5_Input.Auto_Sel AND TR_20_Deg AND Part1_Load_Comp AND CC6_Output.Home_Position) THEN
+		CC5_Output.o_Clamp_WP := TRUE;
+		Cyl_Delay[12](IN:= (CC5_Output.o_Clamp_WP), PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[12].Q THEN
+		CC5_Input.i_Declamp1_Fbk := CC5_Input.i_Declamp2_Fbk := CC5_Input.i_Declamp3_Fbk := CC5_Output.Home_Position := FALSE;
+		CC5_Input.i_Clamp1_Fbk := CC5_Input.i_Clamp2_Fbk := CC5_Input.i_Clamp3_Fbk := CC5_Output.Work_Position := TRUE;
+		CC5_Output.o_Clamp_WP := FALSE;
+		END_IF
+	END_IF
+	IF (Start_Pb AND CC6_Input.Auto_Sel AND TR_20_Deg AND CC5_Output.Work_Position) THEN
+		CC6_Output.o_Clamp_WP := TRUE;
+		Cyl_Delay[13](IN:= CC6_Output.o_Clamp_WP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[13].Q THEN
+		CC6_Input.i_Declamp1_Fbk := CC6_Input.i_Declamp2_Fbk := CC6_Input.i_Declamp3_Fbk := CC6_Output.Home_Position := FALSE;
+		CC6_Input.i_Clamp1_Fbk := CC6_Input.i_Clamp2_Fbk := CC6_Input.i_Clamp3_Fbk := CC6_Output.Work_Position := TRUE;
+		CC6_Output.o_Clamp_WP := FALSE;
+		END_IF
+	END_IF
+	IF (Start_Pb AND CC1_Input.Auto_Sel AND TR_20_Deg AND CC6_Output.Work_Position) THEN
+		CC1_Output.o_Clamp_WP := TRUE;
+		Cyl_Delay[14](IN:= CC1_Output.o_Clamp_WP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[14].Q THEN
+		CC1_Input.i_Declamp1_Fbk := CC1_Input.i_Declamp2_Fbk := CC1_Input.i_Declamp3_Fbk := CC1_Output.Home_Position := FALSE;
+		CC1_Input.i_Clamp1_Fbk := CC1_Input.i_Clamp2_Fbk := CC1_Input.i_Clamp3_Fbk := CC1_Output.Work_Position := TRUE;
+		CC1_Output.o_Clamp_WP := FALSE;
+		END_IF
+	END_IF
+	IF (Start_Pb AND CC3_Input.Auto_Sel AND TR_20_Deg AND CC1_Output.Work_Position) THEN
+		CC3_Output.o_Clamp_WP := TRUE;
+		Cyl_Delay[14](IN:= CC3_Output.o_Clamp_WP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[14].Q THEN
+		CC3_Input.i_Declamp1_Fbk := CC3_Input.i_Declamp2_Fbk := CC3_Input.i_Declamp3_Fbk := CC3_Output.Home_Position := FALSE;
+		CC3_Input.i_Clamp1_Fbk := CC3_Input.i_Clamp2_Fbk := CC3_Input.i_Clamp3_Fbk := CC3_Output.Work_Position := TRUE;
+		CC3_Output.o_Clamp_WP := FALSE;
+		END_IF
+	END_IF
+	IF (Start_Pb AND CC2_Input.Auto_Sel AND TR_50_Deg AND Part2_Load_Comp AND Roller_Down AND CC3_Output.Work_Position) THEN
+		CC2_Output.o_Clamp_WP := TRUE;
+		Cyl_Delay[15](IN:= CC2_Output.o_Clamp_WP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[15].Q THEN
+		CC2_Input.i_Declamp1_Fbk := CC2_Input.i_Declamp2_Fbk := CC2_Input.i_Declamp3_Fbk := CC2_Output.Home_Position := FALSE;
+		CC2_Input.i_Clamp1_Fbk := CC2_Input.i_Clamp2_Fbk := CC2_Input.i_Clamp3_Fbk := CC2_Output.Work_Position := TRUE;
+		CC2_Output.o_Clamp_WP := FALSE;
+		END_IF
+	END_IF
+	IF (Start_Pb AND CC4_Input.Auto_Sel AND TR_50_Deg AND Roller_Down AND CC2_Output.Work_Position) THEN
+		CC4_Output.o_Clamp_WP := TRUE;
+		Cyl_Delay[16](IN:= CC4_Output.o_Clamp_WP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[16].Q THEN
+		CC4_Input.i_Declamp1_Fbk := CC4_Input.i_Declamp2_Fbk := CC4_Input.i_Declamp3_Fbk := CC4_Output.Home_Position := FALSE;
+		CC4_Input.i_Clamp1_Fbk := CC4_Input.i_Clamp2_Fbk := CC4_Input.i_Clamp3_Fbk := CC4_Output.Work_Position := TRUE;
+		CC4_Output.o_Clamp_WP := FALSE;
+		END_IF
+	END_IF
+	
+	IF (CC5_Input.Auto_Sel AND TT_0_Deg AND TR_0_Deg AND Robot_Weld_Comp) THEN
+		CC5_Output.o_Clamp_HP := TRUE;
+		Cyl_Delay[18](IN:= CC5_Output.o_Clamp_HP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[18].Q THEN
+		CC5_Input.i_Clamp1_Fbk := CC5_Input.i_Clamp2_Fbk := CC5_Input.i_Clamp3_Fbk := CC5_Output.Work_Position := FALSE;
+		CC5_Input.i_Declamp1_Fbk := CC5_Input.i_Declamp2_Fbk := CC5_Input.i_Declamp3_Fbk := CC5_Output.Home_Position := TRUE;
+		CC5_Output.o_clamp_HP := FALSE;
+		END_IF
+	END_IF
+	IF (CC3_Input.Auto_Sel AND TT_0_Deg AND TR_0_Deg AND Robot_Weld_Comp) THEN
+		CC3_Output.o_Clamp_HP := TRUE;
+		Cyl_Delay[19](IN:= CC3_Output.o_Clamp_HP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[19].Q THEN
+		CC3_Input.i_Clamp1_Fbk := CC3_Input.i_Clamp2_Fbk := CC3_Input.i_Clamp3_Fbk := CC3_Output.Work_Position := FALSE;
+		CC3_Input.i_Declamp1_Fbk := CC3_Input.i_Declamp2_Fbk := CC3_Input.i_Declamp3_Fbk := CC3_Output.Home_Position := TRUE;
+		CC3_Output.o_clamp_HP := FALSE;
+		END_IF
+	END_IF
+	IF (CC1_Input.Auto_Sel AND TT_0_Deg AND TR_0_Deg AND Robot_Weld_Comp) THEN
+		CC1_Output.o_Clamp_HP := TRUE;
+		Cyl_Delay[20](IN:= CC1_Output.o_Clamp_HP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[20].Q THEN
+		CC1_Input.i_Clamp1_Fbk := CC1_Input.i_Clamp2_Fbk := CC1_Input.i_Clamp3_Fbk := CC1_Output.Work_Position := FALSE;
+		CC1_Input.i_Declamp1_Fbk := CC1_Input.i_Declamp2_Fbk := CC1_Input.i_Declamp3_Fbk := CC1_Output.Home_Position := TRUE;
+		CC1_Output.o_clamp_HP := FALSE;
+		END_IF
+	END_IF
+	IF (CC1_Output.Home_Position AND CC3_Output.Home_Position AND CC5_Output.Home_Position AND Roller_Up AND Part1_Unload_Comp AND TT_0_Deg AND TR_50_Deg AND Robot_Weld_Comp) THEN
+		CC6_Output.o_Clamp_HP := TRUE;
+		Cyl_Delay[21](IN:= CC6_Output.o_Clamp_HP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[21].Q THEN
+		CC6_Input.i_Clamp1_Fbk := CC6_Input.i_Clamp2_Fbk := CC6_Input.i_Clamp3_Fbk := CC6_Output.Work_Position := FALSE;
+		CC6_Input.i_Declamp1_Fbk := CC6_Input.i_Declamp2_Fbk := CC6_Input.i_Declamp3_Fbk := CC6_Output.Home_Position := TRUE;
+		CC6_Output.o_clamp_HP := FALSE;
+		END_IF
+	END_IF
+	IF (CC6_Output.Home_Position AND Roller_Up AND Part1_Unload_Comp AND TT_0_Deg AND TR_50_Deg AND Robot_Weld_Comp) THEN
+		CC4_Output.o_Clamp_HP := TRUE;
+		Cyl_Delay[22](IN:= CC4_Output.o_Clamp_HP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[22].Q THEN
+		CC4_Input.i_Clamp1_Fbk := CC4_Input.i_Clamp2_Fbk := CC4_Input.i_Clamp3_Fbk := CC4_Output.Work_Position := FALSE;
+		CC4_Input.i_Declamp1_Fbk := CC4_Input.i_Declamp2_Fbk := CC4_Input.i_Declamp3_Fbk := CC4_Output.Home_Position := TRUE;
+		CC4_Output.o_clamp_HP := FALSE;
+		END_IF
+	END_IF
+	IF (CC4_Output.Home_Position AND Roller_Up AND Part1_Unload_Comp AND TT_0_Deg AND TR_50_Deg AND Robot_Weld_Comp) THEN
+		CC2_Output.o_Clamp_HP := TRUE;
+		Cyl_Delay[23](IN:= CC2_Output.o_Clamp_HP, PT:= T#1S, Q=> , ET=> );
+		IF Cyl_Delay[23].Q THEN
+		CC2_Input.i_Clamp1_Fbk := CC2_Input.i_Clamp2_Fbk := CC2_Input.i_Clamp3_Fbk := CC2_Output.Work_Position := FALSE;
+		CC2_Input.i_Declamp1_Fbk := CC2_Input.i_Declamp2_Fbk := CC2_Input.i_Declamp3_Fbk := CC2_Output.Home_Position := TRUE;
+		CC2_Output.o_clamp_HP := FALSE;
+		END_IF
+	END_IF
+
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="Fix2_FB">
+      <LineId Id="133" Count="0" />
+      <LineId Id="135" Count="0" />
+      <LineId Id="134" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="28" Count="1" />
+      <LineId Id="198" Count="1" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="62" Count="0" />
+      <LineId Id="410" Count="0" />
+      <LineId Id="201" Count="0" />
+      <LineId Id="200" Count="0" />
+      <LineId Id="61" Count="0" />
+      <LineId Id="202" Count="1" />
+      <LineId Id="63" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="411" Count="0" />
+      <LineId Id="205" Count="0" />
+      <LineId Id="204" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="36" Count="1" />
+      <LineId Id="206" Count="1" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="66" Count="0" />
+      <LineId Id="413" Count="0" />
+      <LineId Id="209" Count="0" />
+      <LineId Id="208" Count="0" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="211" Count="0" />
+      <LineId Id="210" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="415" Count="0" />
+      <LineId Id="248" Count="0" />
+      <LineId Id="212" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="40" Count="1" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="214" Count="0" />
+      <LineId Id="213" Count="0" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="417" Count="0" />
+      <LineId Id="216" Count="0" />
+      <LineId Id="215" Count="0" />
+      <LineId Id="70" Count="1" />
+      <LineId Id="218" Count="0" />
+      <LineId Id="217" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="419" Count="0" />
+      <LineId Id="220" Count="0" />
+      <LineId Id="219" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="44" Count="1" />
+      <LineId Id="58" Count="0" />
+      <LineId Id="223" Count="0" />
+      <LineId Id="222" Count="0" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="421" Count="0" />
+      <LineId Id="225" Count="0" />
+      <LineId Id="224" Count="0" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="72" Count="0" />
+      <LineId Id="227" Count="0" />
+      <LineId Id="226" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="423" Count="0" />
+      <LineId Id="229" Count="0" />
+      <LineId Id="228" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="48" Count="1" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="233" Count="0" />
+      <LineId Id="232" Count="0" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="425" Count="0" />
+      <LineId Id="235" Count="0" />
+      <LineId Id="234" Count="0" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="237" Count="0" />
+      <LineId Id="236" Count="0" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="427" Count="0" />
+      <LineId Id="239" Count="0" />
+      <LineId Id="238" Count="0" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="52" Count="1" />
+      <LineId Id="60" Count="0" />
+      <LineId Id="241" Count="0" />
+      <LineId Id="240" Count="0" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="429" Count="0" />
+      <LineId Id="243" Count="0" />
+      <LineId Id="242" Count="0" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="78" Count="0" />
+      <LineId Id="245" Count="0" />
+      <LineId Id="244" Count="0" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="431" Count="0" />
+      <LineId Id="247" Count="0" />
+      <LineId Id="246" Count="0" />
+      <LineId Id="106" Count="0" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="98" Count="0" />
+      <LineId Id="101" Count="0" />
+      <LineId Id="100" Count="0" />
+      <LineId Id="105" Count="0" />
+      <LineId Id="161" Count="1" />
+      <LineId Id="107" Count="0" />
+      <LineId Id="437" Count="0" />
+      <LineId Id="164" Count="1" />
+      <LineId Id="163" Count="0" />
+      <LineId Id="109" Count="0" />
+      <LineId Id="166" Count="0" />
+      <LineId Id="171" Count="1" />
+      <LineId Id="111" Count="0" />
+      <LineId Id="439" Count="0" />
+      <LineId Id="277" Count="2" />
+      <LineId Id="114" Count="1" />
+      <LineId Id="175" Count="1" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="441" Count="0" />
+      <LineId Id="113" Count="0" />
+      <LineId Id="178" Count="0" />
+      <LineId Id="177" Count="0" />
+      <LineId Id="547" Count="7" />
+      <LineId Id="546" Count="0" />
+      <LineId Id="118" Count="1" />
+      <LineId Id="179" Count="1" />
+      <LineId Id="120" Count="0" />
+      <LineId Id="443" Count="0" />
+      <LineId Id="117" Count="0" />
+      <LineId Id="182" Count="0" />
+      <LineId Id="181" Count="0" />
+      <LineId Id="122" Count="2" />
+      <LineId Id="184" Count="0" />
+      <LineId Id="183" Count="0" />
+      <LineId Id="445" Count="0" />
+      <LineId Id="190" Count="1" />
+      <LineId Id="121" Count="0" />
+      <LineId Id="192" Count="0" />
+      <LineId Id="320" Count="4" />
+      <LineId Id="449" Count="0" />
+      <LineId Id="325" Count="1" />
+      <LineId Id="319" Count="0" />
+      <LineId Id="330" Count="4" />
+      <LineId Id="451" Count="0" />
+      <LineId Id="335" Count="1" />
+      <LineId Id="329" Count="0" />
+      <LineId Id="338" Count="4" />
+      <LineId Id="453" Count="0" />
+      <LineId Id="343" Count="1" />
+      <LineId Id="337" Count="0" />
+      <LineId Id="346" Count="4" />
+      <LineId Id="455" Count="0" />
+      <LineId Id="351" Count="1" />
+      <LineId Id="345" Count="0" />
+      <LineId Id="355" Count="4" />
+      <LineId Id="457" Count="0" />
+      <LineId Id="360" Count="1" />
+      <LineId Id="354" Count="0" />
+      <LineId Id="363" Count="4" />
+      <LineId Id="459" Count="0" />
+      <LineId Id="368" Count="1" />
+      <LineId Id="362" Count="0" />
+      <LineId Id="108" Count="0" />
+      <LineId Id="25" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

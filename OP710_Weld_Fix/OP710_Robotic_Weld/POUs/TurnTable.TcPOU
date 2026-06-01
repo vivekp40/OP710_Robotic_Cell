@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="TurnTable" Id="{e1709711-f1ac-4ca3-b4f6-ce31c81ac309}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK TurnTable
+VAR_INPUT
+
+	TT_0_Deg  			: BOOL;						//TurnTable at 0 degree
+	TT_180_Deg 			: BOOL;						//TurnTable at 180 degree
+	Part_Load_Comp 		: BOOL;						//OP710 Part Load Complete
+	Part_Unload_Comp 	: BOOL;						//OP710 Part Unload Complete
+	Pickup_Comp 		: BOOL;						//Robot Part Pickup Complete
+	Roller_Down			: BOOL;						//Roller door Down position
+	Roller_Up			: BOOL;						//Roller door Up position
+	Fix_Home_Position 	: BOOL;
+	Fix_Work_Position 	: BOOL;
+	TR_0_Deg  			: BOOL;						//Trunnion at 0 degree
+END_VAR
+
+VAR_OUTPUT
+	TT_0_Deg_Cmd  : BOOL;						//Trunnion rotate to 0 degree
+	TT_180_Deg_Cmd : BOOL;						//Trunnion rotate to 180 degree
+END_VAR
+
+VAR
+	TT_Rot_Delay : ARRAY [0..5] OF TON;							// TurnTable rotation delay
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE Fix_Sel OF
+	
+	0: 
+
+IF (TT_0_Deg AND TR_0_Deg AND Part_Load_Comp AND Fix_Work_Position AND Roller_Down AND Start_Pb) THEN
+	TT_180_Deg_Cmd := TRUE;
+	TT_Rot_Delay[0](IN:= TT_180_Deg_Cmd , PT:= T#1S, Q=> , ET=> );
+	IF TT_Rot_Delay[0].Q THEN
+	TT_0_Deg := FALSE;
+	TT_180_Deg := TRUE;
+	TT_180_Deg_Cmd := FALSE;
+	END_IF	
+ELSIF (TT_180_Deg AND Pickup_Comp AND Roller_Up AND Fix_Home_Position) THEN
+	TT_0_Deg_Cmd := TRUE;
+	TT_Rot_Delay[1](IN:= TT_0_Deg_Cmd , PT:= T#1S, Q=> , ET=> );
+	IF TT_Rot_Delay[1].Q THEN
+	TT_180_Deg := FALSE;
+	TT_0_Deg := TRUE;
+	TT_0_Deg_Cmd := FALSE;
+	END_IF
+END_IF
+	Fix_Sel := 0;
+
+	1: 
+
+IF (TT_180_Deg AND TR_0_Deg AND Part_Load_Comp AND Fix_Work_Position AND Roller_Down AND Start_Pb) THEN
+	TT_180_Deg_Cmd := TRUE;
+	TT_Rot_Delay[2](IN:= TT_180_Deg_Cmd , PT:= T#1S, Q=> , ET=> );
+	IF TT_Rot_Delay[2].Q THEN
+	TT_0_Deg := FALSE;
+	TT_180_Deg := TRUE;
+	TT_180_Deg_Cmd := FALSE;
+	END_IF	
+ELSIF (TT_0_Deg AND Pickup_Comp AND Roller_Up AND Fix_Home_Position) THEN
+	TT_180_Deg_Cmd := TRUE;
+	TT_Rot_Delay[3](IN:= TT_180_Deg_Cmd , PT:= T#1S, Q=> , ET=> );
+	IF TT_Rot_Delay[3].Q THEN
+	TT_0_Deg := FALSE;
+	TT_180_Deg := TRUE;
+	TT_180_Deg_Cmd := FALSE;
+	END_IF
+END_IF
+	Fix_Sel := 1;
+
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="TurnTable">
+      <LineId Id="197" Count="2" />
+      <LineId Id="196" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="92" Count="0" />
+      <LineId Id="91" Count="0" />
+      <LineId Id="93" Count="0" />
+      <LineId Id="96" Count="0" />
+      <LineId Id="147" Count="1" />
+      <LineId Id="95" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="97" Count="1" />
+      <LineId Id="101" Count="1" />
+      <LineId Id="149" Count="1" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="103" Count="0" />
+      <LineId Id="221" Count="0" />
+      <LineId Id="201" Count="4" />
+      <LineId Id="207" Count="13" />
+      <LineId Id="200" Count="0" />
+      <LineId Id="222" Count="0" />
+      <LineId Id="225" Count="0" />
+      <LineId Id="223" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

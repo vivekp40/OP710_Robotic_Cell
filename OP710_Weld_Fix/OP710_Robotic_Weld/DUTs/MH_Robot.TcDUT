@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <DUT Name="MH_Robot" Id="{396a83d9-c1fc-4288-b06c-043e62defa1f}">
+    <Declaration><![CDATA[TYPE MH_Robot :
+STRUCT
+	i_Home 			: BOOL;
+	i_Prg_No		: INT;
+	i_Start			: BOOL;	
+	i_Area_Ok1		: BOOL;
+	i_Area_Ok2		: BOOL;
+	
+	o_Pickup_Comp1	: BOOL;
+	o_Pickup_Comp2	: BOOL;
+		
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

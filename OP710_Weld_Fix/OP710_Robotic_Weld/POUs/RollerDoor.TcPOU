@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="RollerDoor" Id="{0df406b2-56b6-4cab-a32c-d99df5965b2c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK RollerDoor
+VAR_INPUT
+
+	Roller_Up  			: BOOL;						//Roller Door Up position
+	Roller_Down 		: BOOL;						//Roller Door Down position
+	Part_Load_Comp 		: BOOL;						//OP710 Part Load Complete
+	Part_Unload_Comp 	: BOOL;						//OP710 Part Unload Complete
+	Weld_Comp 			: BOOL;						//Robot Weld Complete
+	TR_0_Deg  			: BOOL;						//Trunnion at 0 degree
+	TR_50_Deg  			: BOOL;						//Trunnion at 50 degree
+	TR_80_Deg  			: BOOL;						//Trunnion at 80 degree
+	TT_0_Deg  			: BOOL;						//TurnTable at 0 degree
+	TT_180_Deg  		: BOOL;						//TurnTable at 180 degree
+	
+END_VAR
+
+VAR_OUTPUT
+	Roller_Up_Cmd  : BOOL;						//Roller Door Up Command
+	Roller_Down_Cmd : BOOL;						//Roller Door Down Command
+END_VAR
+
+VAR
+	Roller_Delay : ARRAY [0..5] OF TON;						// Roller Door Up/Down delay
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE Fix_Sel OF
+	
+	0: 
+IF (Roller_Up AND Part_Load_Comp AND TR_80_Deg AND TT_0_Deg AND Start_Pb) THEN
+	Roller_Down_Cmd := TRUE;
+	Roller_Delay[0](IN:= Roller_Down_Cmd , PT:= T#1S, Q=> , ET=> );
+	IF Roller_Delay[0].Q THEN
+	Roller_Up := FALSE;
+	Roller_Down := TRUE;
+	Roller_Down_Cmd := FALSE;
+	END_IF	
+ELSIF (Roller_Down AND Weld_Comp AND TR_0_Deg AND TT_180_Deg AND Start_Pb) THEN
+	Roller_Up_Cmd := TRUE;
+	Roller_Delay[1](IN:= Roller_Up_Cmd , PT:= T#1S, Q=> , ET=> );
+	IF Roller_Delay[1].Q THEN
+	Roller_Down := FALSE;
+	Roller_Up := TRUE;
+	Roller_Up_Cmd := FALSE;
+	END_IF
+END_IF
+	Fix_Sel := 0;
+
+	1:
+IF (Roller_Up AND Part_Load_Comp AND TR_50_Deg AND TT_180_Deg AND Start_Pb) THEN
+	Roller_Down_Cmd := TRUE;
+	Roller_Delay[2](IN:= Roller_Down_Cmd , PT:= T#1S, Q=> , ET=> );
+	IF Roller_Delay[2].Q THEN
+	Roller_Up := FALSE;
+	Roller_Down := TRUE;
+	Roller_Down_Cmd := FALSE;
+	END_IF	
+ELSIF (Roller_Down AND Weld_Comp AND TR_0_Deg AND TT_0_Deg AND Start_Pb) THEN
+	Roller_Up_Cmd := TRUE;
+	Roller_Delay[3](IN:= Roller_Up_Cmd , PT:= T#1S, Q=> , ET=> );
+	IF Roller_Delay[3].Q THEN
+	Roller_Down := FALSE;
+	Roller_Up := TRUE;
+	Roller_Up_Cmd := FALSE;
+	END_IF
+END_IF
+	Fix_Sel := 1;
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="RollerDoor">
+      <LineId Id="197" Count="2" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="92" Count="0" />
+      <LineId Id="90" Count="0" />
+      <LineId Id="93" Count="0" />
+      <LineId Id="96" Count="0" />
+      <LineId Id="173" Count="0" />
+      <LineId Id="148" Count="0" />
+      <LineId Id="94" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="97" Count="1" />
+      <LineId Id="101" Count="1" />
+      <LineId Id="174" Count="0" />
+      <LineId Id="150" Count="0" />
+      <LineId Id="99" Count="0" />
+      <LineId Id="221" Count="1" />
+      <LineId Id="202" Count="0" />
+      <LineId Id="201" Count="0" />
+      <LineId Id="204" Count="15" />
+      <LineId Id="203" Count="0" />
+      <LineId Id="223" Count="0" />
+      <LineId Id="200" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

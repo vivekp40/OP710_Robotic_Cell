@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <GVL Name="Outputs" Id="{0242a8c7-42ec-4aeb-ab0c-62d3c313984d}">
+    <Declaration><![CDATA[
+//(------OUTPUTS--------)
+
+VAR_GLOBAL
+	
+o_CC1_CLAMPING_UNIT1_3_WP AT %QX0.0 : BOOL;		//Clamping Circuit 1 Clamping Unit 1-3 WP
+o_CC1_CLAMPING_UNIT1_3_HP AT %QX0.1 : BOOL;		//Clamping Circuit 1 Clamping Unit 1-3 HP
+o_CC2_CLAMPING_UNIT1_3_WP AT %QX0.2 : BOOL;		//Clamping Circuit 2 Clamping Unit 1-3 WP
+o_CC2_CLAMPING_UNIT1_3_HP AT %QX0.3 : BOOL;		//Clamping Circuit 2 Clamping Unit 1-3 HP
+o_CC3_CLAMPING_UNIT1_3_WP AT %QX0.4 : BOOL;		//Clamping Circuit 3 Clamping Unit 1-3 WP
+o_CC3_CLAMPING_UNIT1_3_HP AT %QX0.5 : BOOL;		//Clamping Circuit 3 Clamping Unit 1-3 HP
+o_CC4_CLAMPING_UNIT1_3_WP AT %QX0.6 : BOOL;		//Clamping Circuit 4 Clamping Unit 1-3 WP
+o_CC4_CLAMPING_UNIT1_3_HP AT %QX0.7 : BOOL;		//Clamping Circuit 4 Clamping Unit 1-3 HP
+
+o_CC5_CLAMPING_UNIT1_3_WP AT %QX1.0 : BOOL;		//Clamping Circuit 5 Clamping Unit 1 WP
+o_CC5_CLAMPING_UNIT1_3_HP AT %QX1.1 : BOOL;		//Clamping Circuit 5 Clamping Unit 1 HP
+o_CC6_CLAMPING_UNIT1_3_WP AT %QX1.2 : BOOL;		//Clamping Circuit 6 Clamping Unit 1 WP
+o_CC6_CLAMPING_UNIT1_3_HP AT %QX1.3 : BOOL;		//Clamping Circuit 6 Clamping Unit 1 HP
+
+i_TR_0_Deg_Cmd AT %Q* : BOOL;
+i_TR_20_Deg_Cmd AT %Q* : BOOL;					//Trunnion at -20 degree
+i_TR_45_Deg_Cmd AT %Q* : BOOL;					//Trunnion at 45 degree
+i_TR_50_Deg_Cmd AT %Q* : BOOL;					//Trunnion at 50 degree
+i_TR_80_Deg_Cmd AT %Q* : BOOL;					//Trunnion at 80 degree
+i_TT_0_Deg_Cmd AT %Q* : BOOL;
+i_TT_180_Deg_Cmd AT %Q* : BOOL;
+
+Roller_Door_Up_Cmd AT %Q* : BOOL;				//Roller Door Up
+Roller_Door_Down_Cmd AT %Q* : BOOL;				//Roller Door Down
+
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

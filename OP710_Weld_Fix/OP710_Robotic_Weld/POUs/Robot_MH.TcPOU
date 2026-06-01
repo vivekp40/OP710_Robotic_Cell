@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="Robot_MH" Id="{60b6a47e-c8b3-45c6-bc55-0a26b034c2df}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Robot_MH
+
+VAR_INPUT
+	Robot_1_In			: MH_Robot;
+	Part_Unload_Comp	: BOOL;
+END_VAR
+
+VAR_OUTPUT
+	Robot_1_Out			: MH_Robot;	
+END_VAR
+
+VAR
+	Pickup_Delay			: ARRAY [0..5] OF TON;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE Robot_1_In.i_Prg_No OF
+	101:
+		IF (Robot_1_In.i_Home AND Robot_1_In.i_Area_Ok1 AND Robot_1_In.i_Start) THEN
+		Pickup_Delay[0](IN:= Robot_1_In.i_Start, PT:= T#1S, Q=> , ET=> );
+		IF Pickup_Delay[0].Q THEN
+		Robot_1_In.i_Home := FALSE;
+		Robot_1_Out.o_Pickup_Comp1 := TRUE;
+		Robot_1_In.i_Home := TRUE;
+		END_IF
+		END_IF
+		IF (Robot_1_In.i_Home AND Robot_1_In.i_Area_Ok2 AND Robot_1_In.i_Start) THEN
+		Pickup_Delay[1](IN:= Robot_1_In.i_Start, PT:= T#1S, Q=> , ET=> );
+		IF Pickup_Delay[1].Q THEN
+		Robot_1_In.i_Home := FALSE;
+		Robot_1_Out.o_Pickup_Comp2 := TRUE;
+		Robot_1_In.i_Home := TRUE;
+		END_IF
+		END_IF
+		IF (Robot_1_In.i_Home AND Part_Unload_Comp) THEN
+		Robot_1_Out.o_Pickup_Comp1 := FALSE;
+		Robot_1_Out.o_Pickup_Comp2 := FALSE;	
+		END_IF
+	102:
+		IF (Robot_1_In.i_Home AND Robot_1_In.i_Area_Ok1 AND Robot_1_In.i_Start) THEN
+		Pickup_Delay[2](IN:= Robot_1_In.i_Start, PT:= T#1S, Q=> , ET=> );
+		IF Pickup_Delay[2].Q THEN
+		Robot_1_In.i_Home := FALSE;
+		Robot_1_Out.o_Pickup_Comp1 := TRUE;
+		Robot_1_In.i_Home := TRUE;
+		END_IF
+		END_IF
+		IF (Robot_1_In.i_Home AND Robot_1_In.i_Area_Ok2 AND Robot_1_In.i_Start) THEN
+		Pickup_Delay[3](IN:= Robot_1_In.i_Start, PT:= T#1S, Q=> , ET=> );
+		IF Pickup_Delay[3].Q THEN
+		Robot_1_In.i_Home := FALSE;
+		Robot_1_Out.o_Pickup_Comp2 := TRUE;
+		Robot_1_In.i_Home := TRUE;
+		END_IF
+		END_IF
+		IF (Robot_1_In.i_Home AND Part_Unload_Comp) THEN
+		Robot_1_Out.o_Pickup_Comp1 := FALSE;
+		Robot_1_Out.o_Pickup_Comp2 := FALSE;	
+		END_IF
+END_CASE
+]]></ST>
+    </Implementation>
+    <LineIds Name="Robot_MH">
+      <LineId Id="22" Count="1" />
+      <LineId Id="25" Count="1" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="89" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="69" Count="1" />
+      <LineId Id="90" Count="0" />
+      <LineId Id="72" Count="1" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="50" Count="1" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="105" Count="19" />
+      <LineId Id="104" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

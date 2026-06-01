@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <GVL Name="Inputs" Id="{1fa58104-b0e3-4e05-aa66-c58b058a95f7}">
+    <Declaration><![CDATA[
+//(------INPUTS--------)
+
+VAR_GLOBAL
+	
+i_Control_Pressure_Sw_In1_BPB1 AT %IX0.0 : BOOL;	//Control Pressure Switch Input 1-BPB1  
+i_Control_Pressure_Sw_In2_BPB1 AT %IX0.1 : BOOL;	//Control Pressure Switch Input 2-BPB1  
+i_Valve_Pos_BGB1 AT %IX0.2 : BOOL;					//Valve Position-BGB1
+i_CC6_Clamp_1_Sensor_HP AT %IX0.4 : BOOL;			//Clamping Circuit 6 Clamping Unit 1 sensor  HP
+i_CC6_Clamp_1_Sensor_WP AT %IX0.5 : BOOL;			//Clamping Circuit 6 Clamping Unit 1 sensor  WP
+i_CC4_Clamp_3_Sensor_HP AT %IX0.6 : BOOL;			//Clamping Circuit 4 Clamping Unit 3 sensor  HP
+i_CC4_Clamp_3_Sensor_WP AT %IX0.7 : BOOL;			//Clamping Circuit 4 Clamping Unit 3 sensor  WP
+i_PART_CONTROL_B13 AT %IX1.0 : BOOL;				//PART CONTROL  B13
+i_PART_CONTROL_B27 AT %IX1.1 : BOOL;				//PART CONTROL  B27
+i_PART_CONTROL_B14 AT %IX1.2 : BOOL;				//PART CONTROL  B14
+i_PART_CONTROL_B28 AT %IX1.3 : BOOL;				//PART CONTROL  B28
+i_KEC6_Slave_module_1_2_1 AT %IX1.6 : BOOL;			//Connect to KEC6 Salve module 1.2
+i_KEC6_Slave_module_1_2_2 AT %IX1.7 : BOOL;			//Connect to KEC6 Salve module 1.2
+
+i_CC4_Clamp_2_Sensor_HP	AT %IX4.0 : BOOL;			//Clamping Circuit 4 Clamping Unit 2 sensor HP
+i_CC4_Clamp_2_Sensor_WP	AT %IX4.1 : BOOL;			//Clamping Circuit 4 Clamping Unit 2 sensor WP
+i_CC4_Clamp_1_Sensor_HP	AT %IX4.2 : BOOL;			//Clamping Circuit 4 Clamping Unit 1 sensor HP
+i_CC4_Clamp_1_Sensor_WP	AT %IX4.3 : BOOL;			//Clamping Circuit 4 Clamping Unit 1 sensor WP
+i_CC2_Clamp_3_Sensor_HP	AT %IX4.4 : BOOL;			//Clamping Circuit 2 Clamping Unit 3 sensor HP
+i_CC2_Clamp_3_Sensor_WP	AT %IX4.5 : BOOL;			//Clamping Circuit 2 Clamping Unit 3 sensor WP
+i_PART_CONTROL_B12	AT %IX4.6 : BOOL;				//PART CONTROL B12
+i_PART_CONTROL_B26	AT %IX4.7 : BOOL;				//PART CONTROL B26
+
+i_PART_CONTROL_B11	AT %IX5.0 : BOOL;				//PART CONTROL B11
+i_PART_CONTROL_B25	AT %IX5.1 : BOOL;				//PART CONTROL B25
+i_PART_CONTROL_B10	AT %IX5.2 : BOOL;				//PART CONTROL B10
+i_PART_CONTROL_B24	AT %IX5.3 : BOOL;				//PART CONTROL B24
+
+i_CC3_Clamp_3_Sensor_HP AT %IX8.0 : BOOL;			//Clamping Circuit 3 Clamping Unit 3 sensor HP
+i_CC3_Clamp_3_Sensor_WP AT %IX8.1 : BOOL;			//Clamping Circuit 3 Clamping Unit 3 sensor WP
+i_CC3_Clamp_2_Sensor_HP AT %IX8.2 : BOOL;			//Clamping Circuit 3 Clamping Unit 2 sensor HP
+i_CC3_Clamp_2_Sensor_WP AT %IX8.3 : BOOL;			//Clamping Circuit 3 Clamping Unit 2 sensor WP
+i_CC3_Clamp_1_Sensor_HP AT %IX8.4 : BOOL;			//Clamping Circuit 3 Clamping Unit 1 sensor HP
+i_CC3_Clamp_1_Sensor_WP AT %IX8.5 : BOOL;			//Clamping Circuit 3 Clamping Unit 1 sensor WP
+i_PART_CONTROL_B7 AT %IX8.6 : BOOL;					//PART CONTROL B7
+i_PART_CONTROL_B21 AT %IX8.7 : BOOL;				//PART CONTROL B21
+
+i_PART_CONTROL_B6 AT %IX9.0 : BOOL;					//PART CONTROL B6
+i_PART_CONTROL_B20 AT %IX9.1 : BOOL;				//PART CONTROL B20
+i_PART_CONTROL_B5 AT %IX9.2 : BOOL;					//PART CONTROL B5
+i_PART_CONTROL_B19 AT %IX9.3 : BOOL;				//PART CONTROL B19
+i_KEC8_Slave_module_2_2_1 AT %IX9.6 : BOOL;			//Connect to KEC8 Salve module 2.2
+i_KEC8_Slave_module_2_2_2 AT %IX9.7 : BOOL;			//Connect to KEC8 Salve module 2.2
+
+i_CC1_Clamp_3_Sensor_HP AT %IX12.0 : BOOL;			//Clamping Circuit 1 Clamping Unit 3 sensor HP
+i_CC1_Clamp_3_Sensor_WP AT %IX12.1 : BOOL;			//Clamping Circuit 1 Clamping Unit 3 sensor WP
+i_CC1_Clamp_2_Sensor_HP AT %IX12.2 : BOOL;			//Clamping Circuit 1 Clamping Unit 2 sensor HP
+i_CC1_Clamp_2_Sensor_WP AT %IX12.3 : BOOL;			//Clamping Circuit 1 Clamping Unit 2 sensor WP
+i_CC1_Clamp_1_Sensor_HP AT %IX12.4 : BOOL;			//Clamping Circuit 1 Clamping Unit 1 sensor HP
+i_CC1_Clamp_1_Sensor_WP AT %IX12.5 : BOOL;			//Clamping Circuit 1 Clamping Unit 1 sensor WP
+i_PART_CONTROL_B4 AT %IX12.6 : BOOL;				//PART CONTROL B4
+i_PART_CONTROL_B18 AT %IX12.7 : BOOL;				//PART CONTROL B18
+
+i_PART_CONTROL_B3 AT %IX13.0 : BOOL;				//PART CONTROL B3
+i_PART_CONTROL_B17 AT %IX13.1 : BOOL;				//PART CONTROL B17
+i_PART_CONTROL_B2 AT %IX13.2 : BOOL;				//PART CONTROL B2
+i_PART_CONTROL_B16 AT %IX13.3 : BOOL;				//PART CONTROL B16
+
+i_CC2_Clamp_2_Sensor_HP AT %IX16.0 : BOOL;			//Clamping Circuit 2 Clamping Unit 2 sensor HP
+i_CC2_Clamp_2_Sensor_WP AT %IX16.1 : BOOL;			//Clamping Circuit 2 Clamping Unit 2 sensor WP
+i_CC2_Clamp_1_Sensor_HP AT %IX16.2 : BOOL;			//Clamping Circuit 2 Clamping Unit 1 sensor HP
+i_CC2_Clamp_1_Sensor_WP AT %IX16.3 : BOOL;			//Clamping Circuit 2 Clamping Unit 1 sensor WP
+i_PART_CONTROL_B9 AT %IX16.4 : BOOL;				//PART CONTROL B9
+i_PART_CONTROL_B23 AT %IX16.5 : BOOL;				//PART CONTROL B23
+i_PART_CONTROL_B8 AT %IX16.6 : BOOL;				//PART CONTROL B8
+i_PART_CONTROL_B22 AT %IX16.7 : BOOL;				//PART CONTROL B22
+
+i_CC5_Clamp_1_Sensor_HP AT %IX24.0 : BOOL;			//Clamping Circuit 5 Clamping Unit 1 sensor HP
+i_CC5_Clamp_1_Sensor_WP AT %IX24.1 : BOOL;			//Clamping Circuit 5 Clamping Unit 1 sensor WP
+i_PART_CONTROL_B1 AT %IX24.2 : BOOL;				//PART CONTROL B1
+i_PART_CONTROL_B15 AT %IX24.3 : BOOL;				//PART CONTROL B15
+
+i_TR_0_Deg AT %I* : BOOL;							//Trunnion at 0 degree
+i_TR_20_Degree AT %I* : BOOL;						//Trunnion at -20 degree
+i_TR_45_Degree AT %I* : BOOL;						//Trunnion at 45 degree
+i_TR_50_Degree AT %I* : BOOL;						//Trunnion at 50 degree
+i_TR_80_Degree AT %I* : BOOL;						//Trunnion at 80 degree
+i_TT_0_Degree AT %I* : BOOL;
+i_TT_180_Degree AT %I* : BOOL;
+
+Roller_Door_Up AT %I* : BOOL;						//Roller Door Up
+Roller_Door_Down AT %I* : BOOL;						//Roller Door Down
+
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
