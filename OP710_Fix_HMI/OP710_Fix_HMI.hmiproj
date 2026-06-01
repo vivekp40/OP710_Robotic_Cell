@@ -135,6 +135,12 @@
     <Content Include="Auto Cycle Fix2.content">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Manual Action Fix1.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Manual Action Fix2.content">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Server\TcHmiLua\TcHmiLua.Config.default.json">
       <SubType>Content</SubType>
     </Content>
