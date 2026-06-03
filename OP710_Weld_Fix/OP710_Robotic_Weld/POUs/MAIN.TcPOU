@@ -6,17 +6,30 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF Safety_Ok THEN
+      <ST><![CDATA[IF Estop THEN
+	Safety_Ok := FALSE;
+END_IF
+IF Fault_Reset THEN
+	Safety_Ok := TRUE;
+END_IF
+IF Safety_Ok THEN
 Master_On := TRUE;
+END_IF
 IF Master_On THEN
 Auto_Cycle_Fix1();
 Auto_Cycle_Fix2();
 END_IF
-END_IF
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="6" Count="6" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="18" Count="2" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="8" Count="3" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

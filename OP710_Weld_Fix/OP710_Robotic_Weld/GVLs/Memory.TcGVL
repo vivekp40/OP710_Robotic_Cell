@@ -9,7 +9,9 @@ Fix_Sel   	 		: INT;							//Station Select Pb, 0 - OP710 Long, 1 - OP710 Short
 Auto_Mode	 		: BOOL;
 Manual_Mode	 		: BOOL;
 Master_On	 		: BOOL;
+EStop				: BOOL;
 Safety_Ok	 		: BOOL;
+Fault_Reset			: BOOL;
 Fix1_Part_1_Load  	: BOOL;
 Fix1_Part_2_Load  	: BOOL;
 Fix2_Part_1_Load  	: BOOL;

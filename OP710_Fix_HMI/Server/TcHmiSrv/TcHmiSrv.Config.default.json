@@ -2510,6 +2510,23 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Auto_Sel": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Auto_Cycle_Fix1::Fixture_1::CC1_Input::Auto_Sel",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 12
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "RefreshDefinitions": {
             "ACCESS": 3,
             "DOMAIN": "TcHmiSrv",
@@ -3429,6 +3446,7 @@
                 "LocalizeText": 3,
                 "Login": 3,
                 "Logout": 3,
+                "PLC1.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Auto_Sel": 3,
                 "SetLocale": 3,
                 "SubscribeEvents": 3,
                 "TcHmiSqliteLogger.Diagnostics": 1,

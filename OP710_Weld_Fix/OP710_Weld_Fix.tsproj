@@ -10,7 +10,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{116F33E1-59B8-494E-B64F-33CA9170714E}" Name="OP710_Robotic_Weld" PrjFilePath="OP710_Robotic_Weld\OP710_Robotic_Weld.plcproj" TmcFilePath="OP710_Robotic_Weld\OP710_Robotic_Weld.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{4212B2D4-8E3F-A937-577C-E04E822ADF9F}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="OP710_Robotic_Weld\OP710_Robotic_Weld.tmc" TmcHash="{0BE987B3-A8B9-72CA-8EE9-5B6173CB0087}">
 					<Name>OP710_Robotic_Weld Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">

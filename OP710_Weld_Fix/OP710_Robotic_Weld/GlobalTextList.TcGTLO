@@ -61,6 +61,16 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"765"</v>
+              <v n="TextDefault">"Estop OK"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"659"</v>
+              <v n="TextDefault">"Fault Reset"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"46"</v>
               <v n="TextDefault">"Home Pos."</v>
               <l n="LanguageTexts" t="ArrayList" />

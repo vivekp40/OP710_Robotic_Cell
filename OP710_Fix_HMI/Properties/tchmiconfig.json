@@ -55,14 +55,14 @@
   "userControls": [],
   "content": [
     {
-      "url": "Auto Cycle Fix2.content",
+      "url": "Auto Cycle Fix1.content",
       "preload": false,
       "keepAlive": false,
       "loadSync": false,
       "preloadBindings": false
     },
     {
-      "url": "Auto Cycle Fix1.content",
+      "url": "Auto Cycle Fix2.content",
       "preload": false,
       "keepAlive": false,
       "loadSync": false,
