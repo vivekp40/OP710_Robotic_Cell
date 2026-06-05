@@ -127,6 +127,6 @@
 }
 </script>
 </div>
-<div id="TcHmiRegion_4" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-height="340" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="70" data-tchmi-top-unit="px" data-tchmi-width="557" data-tchmi-width-unit="px">
+<div id="TcHmiRegion_4" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-height="373" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="58" data-tchmi-top-unit="px" data-tchmi-width="557" data-tchmi-width-unit="px">
 </div>
 </div>

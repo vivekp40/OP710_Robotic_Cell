@@ -1,4 +1,4 @@
-<div id="Manual_Action" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="70" data-tchmi-left="10" data-tchmi-width="557" data-tchmi-height="340">
+<div id="Manual_Action" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="58" data-tchmi-left="10" data-tchmi-width="557" data-tchmi-height="373">
 <div id="TcHmiTextbox_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="29" data-tchmi-left-unit="px" data-tchmi-text="CC1" data-tchmi-top="22" data-tchmi-top-unit="px" data-tchmi-width="54" data-tchmi-width-unit="px" data-tchmi-text-font-size="15" data-tchmi-text-horizontal-alignment="Center">
 <script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
 {
@@ -240,7 +240,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiButton_28" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="283" data-tchmi-left-unit="px" data-tchmi-text="Clamp" data-tchmi-top="22" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Work_Position%/s%">
+<div id="TcHmiButton_28" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="283" data-tchmi-left-unit="px" data-tchmi-text="Clamp" data-tchmi-top="22" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%PLC1.Auto_Cycle_Fix1.Fixture_1.Unit_Adv_Pb%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 0, 0, 1)"
@@ -318,7 +318,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiButton_29" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="367" data-tchmi-left-unit="px" data-tchmi-text="Declamp" data-tchmi-top="22" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Home_Position%/s%">
+<div id="TcHmiButton_29" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="367" data-tchmi-left-unit="px" data-tchmi-text="Declamp" data-tchmi-top="22" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%PLC1.Auto_Cycle_Fix1.Fixture_1.Unit_Ret_Pb%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 0, 0, 1)"
@@ -542,7 +542,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiButton_87" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="283" data-tchmi-left-unit="px" data-tchmi-text="Clamp" data-tchmi-top="67" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC2_Output.Work_Position%/s%">
+<div id="TcHmiButton_87" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="283" data-tchmi-left-unit="px" data-tchmi-text="Clamp" data-tchmi-top="67" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%PLC1.Auto_Cycle_Fix1.Fixture_1.Unit_Adv_Pb%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 0, 0, 1)"
@@ -620,7 +620,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiButton_88" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="367" data-tchmi-left-unit="px" data-tchmi-text="Declamp" data-tchmi-top="67" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC2_Output.Home_Position%/s%">
+<div id="TcHmiButton_88" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="367" data-tchmi-left-unit="px" data-tchmi-text="Declamp" data-tchmi-top="67" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%PLC1.Auto_Cycle_Fix1.Fixture_1.Unit_Ret_Pb%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 0, 0, 1)"
@@ -844,7 +844,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiButton_89" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="283" data-tchmi-left-unit="px" data-tchmi-text="Clamp" data-tchmi-top="113" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC3_Output.Work_Position%/s%">
+<div id="TcHmiButton_89" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="283" data-tchmi-left-unit="px" data-tchmi-text="Clamp" data-tchmi-top="113" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%PLC1.Auto_Cycle_Fix1.Fixture_1.Unit_Adv_Pb%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 0, 0, 1)"
@@ -922,7 +922,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiButton_90" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="367" data-tchmi-left-unit="px" data-tchmi-text="Declamp" data-tchmi-top="113" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC3_Output.Home_Position%/s%">
+<div id="TcHmiButton_90" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="367" data-tchmi-left-unit="px" data-tchmi-text="Declamp" data-tchmi-top="113" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%PLC1.Auto_Cycle_Fix1.Fixture_1.Unit_Ret_Pb%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 0, 0, 1)"
@@ -996,7 +996,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiToggleButton_33" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="113" data-tchmi-left-unit="px" data-tchmi-text="Auto" data-tchmi-top="158" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Auto_Sel%/s%">
+<div id="TcHmiToggleButton_33" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="113" data-tchmi-left-unit="px" data-tchmi-text="Auto" data-tchmi-top="158" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC4_Input.Auto_Sel%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 0, 0, 1)"
@@ -1012,7 +1012,7 @@
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Auto_Sel%/s%",
+    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC4_Input.Auto_Sel%/s%",
     "actions": [
       {
         "objectType": "Condition",
@@ -1074,7 +1074,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiToggleButton_34" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="189" data-tchmi-left-unit="px" data-tchmi-text="Manual" data-tchmi-top="158" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Manual_Sel%/s%">
+<div id="TcHmiToggleButton_34" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="189" data-tchmi-left-unit="px" data-tchmi-text="Manual" data-tchmi-top="158" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC4_Input.Manual_Sel%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 1, 0, 1)"
@@ -1084,7 +1084,7 @@
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Manual_Sel%/s%",
+    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC4_Input.Manual_Sel%/s%",
     "actions": [
       {
         "objectType": "Condition",
@@ -1096,7 +1096,7 @@
                 "compare1": {
                   "objectType": "Symbol",
                   "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Manual_Sel%/s%"
+                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC4_Input.Manual_Sel%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",
@@ -1146,7 +1146,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiButton_91" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="283" data-tchmi-left-unit="px" data-tchmi-text="Clamp" data-tchmi-top="158" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Work_Position%/s%">
+<div id="TcHmiButton_91" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="283" data-tchmi-left-unit="px" data-tchmi-text="Clamp" data-tchmi-top="158" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%PLC1.Auto_Cycle_Fix1.Fixture_1.Unit_Adv_Pb%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 0, 0, 1)"
@@ -1162,7 +1162,7 @@
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Work_Position%/s%",
+    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC4_Output.Work_Position%/s%",
     "actions": [
       {
         "objectType": "Condition",
@@ -1174,7 +1174,7 @@
                 "compare1": {
                   "objectType": "Symbol",
                   "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Work_Position%/s%"
+                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC4_Output.Work_Position%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",
@@ -1224,7 +1224,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiButton_92" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="367" data-tchmi-left-unit="px" data-tchmi-text="Declamp" data-tchmi-top="158" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Home_Position%/s%">
+<div id="TcHmiButton_92" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="367" data-tchmi-left-unit="px" data-tchmi-text="Declamp" data-tchmi-top="158" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%PLC1.Auto_Cycle_Fix1.Fixture_1.Unit_Ret_Pb%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 0, 0, 1)"
@@ -1236,7 +1236,7 @@
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Home_Position%/s%",
+    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC4_Output.Home_Position%/s%",
     "actions": [
       {
         "objectType": "Condition",
@@ -1248,7 +1248,7 @@
                 "compare1": {
                   "objectType": "Symbol",
                   "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Home_Position%/s%"
+                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC4_Output.Home_Position%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",
@@ -1298,7 +1298,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiToggleButton_35" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="113" data-tchmi-left-unit="px" data-tchmi-text="Auto" data-tchmi-top="204" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Auto_Sel%/s%">
+<div id="TcHmiToggleButton_35" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="113" data-tchmi-left-unit="px" data-tchmi-text="Auto" data-tchmi-top="204" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC5_Input.Auto_Sel%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 0, 0, 1)"
@@ -1314,7 +1314,7 @@
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Auto_Sel%/s%",
+    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC5_Input.Auto_Sel%/s%",
     "actions": [
       {
         "objectType": "Condition",
@@ -1326,7 +1326,7 @@
                 "compare1": {
                   "objectType": "Symbol",
                   "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Auto_Sel%/s%"
+                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC5_Input.Auto_Sel%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",
@@ -1376,7 +1376,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiToggleButton_36" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="189" data-tchmi-left-unit="px" data-tchmi-text="Manual" data-tchmi-top="204" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Manual_Sel%/s%">
+<div id="TcHmiToggleButton_36" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="189" data-tchmi-left-unit="px" data-tchmi-text="Manual" data-tchmi-top="204" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC5_Input.Manual_Sel%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 1, 0, 1)"
@@ -1386,7 +1386,7 @@
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Manual_Sel%/s%",
+    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC5_Input.Manual_Sel%/s%",
     "actions": [
       {
         "objectType": "Condition",
@@ -1398,7 +1398,7 @@
                 "compare1": {
                   "objectType": "Symbol",
                   "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Manual_Sel%/s%"
+                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC5_Input.Manual_Sel%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",
@@ -1448,7 +1448,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiButton_93" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="283" data-tchmi-left-unit="px" data-tchmi-text="Clamp" data-tchmi-top="204" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Work_Position%/s%">
+<div id="TcHmiButton_93" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="283" data-tchmi-left-unit="px" data-tchmi-text="Clamp" data-tchmi-top="204" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%PLC1.Auto_Cycle_Fix1.Fixture_1.Unit_Adv_Pb%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 0, 0, 1)"
@@ -1464,7 +1464,7 @@
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Work_Position%/s%",
+    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC5_Output.Work_Position%/s%",
     "actions": [
       {
         "objectType": "Condition",
@@ -1476,7 +1476,7 @@
                 "compare1": {
                   "objectType": "Symbol",
                   "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Work_Position%/s%"
+                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC5_Output.Work_Position%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",
@@ -1526,7 +1526,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiButton_94" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="367" data-tchmi-left-unit="px" data-tchmi-text="Declamp" data-tchmi-top="204" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Home_Position%/s%">
+<div id="TcHmiButton_94" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="367" data-tchmi-left-unit="px" data-tchmi-text="Declamp" data-tchmi-top="204" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%PLC1.Auto_Cycle_Fix1.Fixture_1.Unit_Ret_Pb%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 0, 0, 1)"
@@ -1538,7 +1538,7 @@
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Home_Position%/s%",
+    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC5_Output.Home_Position%/s%",
     "actions": [
       {
         "objectType": "Condition",
@@ -1550,7 +1550,7 @@
                 "compare1": {
                   "objectType": "Symbol",
                   "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Home_Position%/s%"
+                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC5_Output.Home_Position%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",
@@ -1600,7 +1600,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiToggleButton_37" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="113" data-tchmi-left-unit="px" data-tchmi-text="Auto" data-tchmi-top="248" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Auto_Sel%/s%">
+<div id="TcHmiToggleButton_37" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="113" data-tchmi-left-unit="px" data-tchmi-text="Auto" data-tchmi-top="248" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC6_Input.Auto_Sel%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 0, 0, 1)"
@@ -1616,7 +1616,7 @@
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Auto_Sel%/s%",
+    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC6_Input.Auto_Sel%/s%",
     "actions": [
       {
         "objectType": "Condition",
@@ -1628,7 +1628,7 @@
                 "compare1": {
                   "objectType": "Symbol",
                   "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Auto_Sel%/s%"
+                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC6_Input.Auto_Sel%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",
@@ -1678,7 +1678,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiToggleButton_38" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="189" data-tchmi-left-unit="px" data-tchmi-text="Manual" data-tchmi-top="248" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Manual_Sel%/s%">
+<div id="TcHmiToggleButton_38" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="189" data-tchmi-left-unit="px" data-tchmi-text="Manual" data-tchmi-top="248" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC6_Input.Manual_Sel%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 1, 0, 1)"
@@ -1688,7 +1688,7 @@
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Manual_Sel%/s%",
+    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC6_Input.Manual_Sel%/s%",
     "actions": [
       {
         "objectType": "Condition",
@@ -1700,7 +1700,7 @@
                 "compare1": {
                   "objectType": "Symbol",
                   "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Manual_Sel%/s%"
+                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC6_Input.Manual_Sel%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",
@@ -1750,7 +1750,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiButton_95" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="283" data-tchmi-left-unit="px" data-tchmi-text="Clamp" data-tchmi-top="248" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Work_Position%/s%">
+<div id="TcHmiButton_95" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="283" data-tchmi-left-unit="px" data-tchmi-text="Clamp" data-tchmi-top="248" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%PLC1.Auto_Cycle_Fix1.Fixture_1.Unit_Adv_Pb%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 0, 0, 1)"
@@ -1766,7 +1766,7 @@
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Work_Position%/s%",
+    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC6_Output.Work_Position%/s%",
     "actions": [
       {
         "objectType": "Condition",
@@ -1778,7 +1778,7 @@
                 "compare1": {
                   "objectType": "Symbol",
                   "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Work_Position%/s%"
+                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC6_Output.Work_Position%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",
@@ -1828,7 +1828,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiButton_96" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="367" data-tchmi-left-unit="px" data-tchmi-text="Declamp" data-tchmi-top="248" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Home_Position%/s%">
+<div id="TcHmiButton_96" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="367" data-tchmi-left-unit="px" data-tchmi-text="Declamp" data-tchmi-top="248" data-tchmi-top-unit="px" data-tchmi-width="66" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%PLC1.Auto_Cycle_Fix1.Fixture_1.Unit_Ret_Pb%/s%">
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
   "color": "rgba(0, 0, 0, 1)"
@@ -1840,7 +1840,7 @@
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Home_Position%/s%",
+    "event": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC6_Output.Home_Position%/s%",
     "actions": [
       {
         "objectType": "Condition",
@@ -1852,7 +1852,7 @@
                 "compare1": {
                   "objectType": "Symbol",
                   "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC1_Output.Home_Position%/s%"
+                  "symbolExpression": "%s%Runtime.Auto_Cycle_Fix1.Fixture_1.CC6_Output.Home_Position%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",

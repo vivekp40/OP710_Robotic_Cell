@@ -2527,6 +2527,246 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.Auto_Cycle_Fix1.Fixture_1.Unit_Adv_Pb": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Auto_Cycle_Fix1::Fixture_1::Unit_Adv_Pb",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "comment": "Fixture Cylinder Clamp Pb",
+                        "propertyOrder": 7
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Auto_Cycle_Fix1.Fixture_1.Unit_Ret_Pb": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Auto_Cycle_Fix1::Fixture_1::Unit_Ret_Pb",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "comment": "Fixture Cylinder Declamp Pb",
+                        "propertyOrder": 8
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Auto_Cycle_Fix1.Robot_MH_0.Robot_1_In.i_Area_Ok1": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Auto_Cycle_Fix1::Robot_MH_0::Robot_1_In::i_Area_Ok1",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 4
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Auto_Cycle_Fix1.Robot_MH_0.Robot_1_In.i_Area_Ok2": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Auto_Cycle_Fix1::Robot_MH_0::Robot_1_In::i_Area_Ok2",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 5
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Auto_Cycle_Fix1.Robot_MH_0.Robot_1_In.i_Home": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Auto_Cycle_Fix1::Robot_MH_0::Robot_1_In::i_Home",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 1
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Auto_Cycle_Fix1.Robot_MH_0.Robot_1_In.i_Prg_No": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Auto_Cycle_Fix1::Robot_MH_0::Robot_1_In::i_Prg_No",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Auto_Cycle_Fix1.Robot_MH_0.Robot_1_In.i_Start": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Auto_Cycle_Fix1::Robot_MH_0::Robot_1_In::i_Start",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 3
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Auto_Cycle_Fix1.Robot_MH_0.Robot_1_Out.o_Pickup_Comp1": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Auto_Cycle_Fix1::Robot_MH_0::Robot_1_Out::o_Pickup_Comp1",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 6
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Auto_Cycle_Fix1.Robot_MH_0.Robot_1_Out.o_Pickup_Comp2": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Auto_Cycle_Fix1::Robot_MH_0::Robot_1_Out::o_Pickup_Comp2",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 7
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Auto_Cycle_Fix1.Robot_Weld_0.Robot_1_In.i_Area_Ok": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Auto_Cycle_Fix1::Robot_Weld_0::Robot_1_In::i_Area_Ok",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 4
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Auto_Cycle_Fix1.Robot_Weld_0.Robot_1_In.i_Home": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Auto_Cycle_Fix1::Robot_Weld_0::Robot_1_In::i_Home",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 1
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Auto_Cycle_Fix1.Robot_Weld_0.Robot_1_In.i_Prg_No": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Auto_Cycle_Fix1::Robot_Weld_0::Robot_1_In::i_Prg_No",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Auto_Cycle_Fix1.Robot_Weld_0.Robot_1_In.i_Start": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Auto_Cycle_Fix1::Robot_Weld_0::Robot_1_In::i_Start",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 3
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Auto_Cycle_Fix1.Robot_Weld_0.Robot_1_Out.o_Weld_Comp": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Auto_Cycle_Fix1::Robot_Weld_0::Robot_1_Out::o_Weld_Comp",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 5
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "RefreshDefinitions": {
             "ACCESS": 3,
             "DOMAIN": "TcHmiSrv",
@@ -3447,6 +3687,20 @@
                 "Login": 3,
                 "Logout": 3,
                 "PLC1.Auto_Cycle_Fix1.Fixture_1.CC1_Input.Auto_Sel": 3,
+                "PLC1.Auto_Cycle_Fix1.Fixture_1.Unit_Adv_Pb": 3,
+                "PLC1.Auto_Cycle_Fix1.Fixture_1.Unit_Ret_Pb": 3,
+                "PLC1.Auto_Cycle_Fix1.Robot_MH_0.Robot_1_In.i_Area_Ok1": 3,
+                "PLC1.Auto_Cycle_Fix1.Robot_MH_0.Robot_1_In.i_Area_Ok2": 3,
+                "PLC1.Auto_Cycle_Fix1.Robot_MH_0.Robot_1_In.i_Home": 3,
+                "PLC1.Auto_Cycle_Fix1.Robot_MH_0.Robot_1_In.i_Prg_No": 3,
+                "PLC1.Auto_Cycle_Fix1.Robot_MH_0.Robot_1_In.i_Start": 3,
+                "PLC1.Auto_Cycle_Fix1.Robot_MH_0.Robot_1_Out.o_Pickup_Comp1": 3,
+                "PLC1.Auto_Cycle_Fix1.Robot_MH_0.Robot_1_Out.o_Pickup_Comp2": 3,
+                "PLC1.Auto_Cycle_Fix1.Robot_Weld_0.Robot_1_In.i_Area_Ok": 3,
+                "PLC1.Auto_Cycle_Fix1.Robot_Weld_0.Robot_1_In.i_Home": 3,
+                "PLC1.Auto_Cycle_Fix1.Robot_Weld_0.Robot_1_In.i_Prg_No": 3,
+                "PLC1.Auto_Cycle_Fix1.Robot_Weld_0.Robot_1_In.i_Start": 3,
+                "PLC1.Auto_Cycle_Fix1.Robot_Weld_0.Robot_1_Out.o_Weld_Comp": 3,
                 "SetLocale": 3,
                 "SubscribeEvents": 3,
                 "TcHmiSqliteLogger.Diagnostics": 1,
